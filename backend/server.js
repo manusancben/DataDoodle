@@ -238,7 +238,10 @@ io.on("connection", (socket) => {
   });
 });
 
-app.get("/", (_req, res) => res.send("Data Doodle Backend running"));
+app.get("/", (_req, res) => {
+  res.status(200).send("RAILWAY TEST OK");
+});
+
 
 app.get("/room", (req, res) => {
   const host = nameOf(req.query.host);
