@@ -10,7 +10,7 @@ app.use(express.json({ limit: "8mb" }));
 const DIST_PATH = path.join(__dirname,"dist");
 app.use(express.static(DIST_PATH));
 const server = http.createServer(app);
-const io = new Server(server, { cors: { origin: "http://localhost:5173" } });
+const io = new Server(server, {cors: {origin: true}});
 const rooms = {};
 const AVATARS = ["🦊", "🐼", "🐙", "🦁", "🦉", "🐸", "🐯", "🐨", "🦄", "🐧", "🐵", "🐬"];
 const PLAYER_COLORS = ["#5b4bdb", "#10b981", "#f97316", "#ec4899", "#0ea5e9", "#8b5cf6", "#14b8a6", "#ef4444"];
