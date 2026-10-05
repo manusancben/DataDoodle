@@ -9,6 +9,8 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: "8mb" }));
 const DIST_PATH = path.join(__dirname,"dist");
+console.log("DIST_PATH =", DIST_PATH);
+console.log("INDEX_HTML =", path.join(DIST_PATH, "index.html"));
 app.use(express.static(DIST_PATH));
 const server = http.createServer(app);
 const io = new Server(server, { cors: { origin: "http://localhost:5173" } });
