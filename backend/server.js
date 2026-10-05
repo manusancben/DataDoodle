@@ -241,6 +241,9 @@ io.on("connection", (socket) => {
 app.get("/", (_req, res) => {
   res.status(200).send("RAILWAY TEST OK");
 });
+app.get("/health", (_req, res) => {
+  res.status(200).send("healthy");
+});
 
 
 app.get("/room", (req, res) => {
